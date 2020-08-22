@@ -663,7 +663,10 @@ header .nav-links.menuAbierto a:nth-child(6) {
 }
 
 .empresa-contenedor .sobre-la-empresa h2 {
-  color: #000;
+  font-size: 5rem;
+  color: #02507a;
+  text-align: center;
+  line-height: 7rem;
 }
 
 @media (orientation: landscape) {
@@ -675,9 +678,6 @@ header .nav-links.menuAbierto a:nth-child(6) {
 
 @media (orientation: landscape) and (min-width: 1024px) {
   .empresa-contenedor .sobre-la-empresa h2 {
-    font-size: 5rem;
-    font-weight: 300;
-    color: #02507a;
     padding: 5rem 0;
   }
 }
@@ -1668,8 +1668,7 @@ footer .copyright::before {
 }
 
 .tiendas {
-  height: 40%;
-  min-height: 40vh;
+  min-height: 30vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1690,14 +1689,14 @@ footer .copyright::before {
   }
 }
 
-.tiendas h1 {
+.tiendas h2 {
   color: #000;
-  font-weight: 400;
   position: relative;
   padding: 1rem 1rem;
   text-align: center;
   font-size: 5rem;
   line-height: 6rem;
+  color: #02507a;
 }
 
 .acordeon {
@@ -1826,12 +1825,23 @@ footer .copyright::before {
 }
 
 .titulo-tienda {
+  font-size: 2rem;
+  line-height: 2.2rem;
+  padding: 0;
+  margin: 1rem 0;
+  width: 100%;
+  font-weight: 400;
+  text-align: center;
+}
+
+.subtitulo-tienda {
   font-size: 1.8rem;
   line-height: 2rem;
   padding: 0;
-  margin: .3rem 0 .3rem;
+  margin: .75rem 0;
   width: 100%;
-  font-weight: bold;
+  font-weight: 300;
+  text-align: center;
 }
 
 .local .nombre-tienda {
@@ -1839,7 +1849,7 @@ footer .copyright::before {
 }
 
 .local .ubicacion-tienda {
-  color: #000;
+  color: #607f9e;
 }
 
 .local .link-tienda {
@@ -1860,15 +1870,17 @@ footer .copyright::before {
 }
 
 .local .datos-tienda {
-  color: #607f9e;
+  color: lightslategray;
+  font-weight: 300;
 }
 
 .local p,
 .local span {
   padding: 0;
-  margin: 0;
+  margin: .5 0;
   font-size: 1.6rem;
-  line-height: 1.75rem;
+  line-height: 1.8rem;
+  text-align: left;
 }
 
 .contenedor-productos {
@@ -1885,6 +1897,7 @@ footer .copyright::before {
   text-align: center;
   font-size: 5rem;
   line-height: 7rem;
+  color: #02507a;
 }
 
 .contenedor-productos .contenido-productos .producto {
