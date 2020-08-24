@@ -415,7 +415,7 @@ header .nav-links.menuAbierto a:nth-child(6) {
 }
 
 .contenedor-presentacion {
-  background-image: url(../img/fog2.jpg);
+  background-image: url(../img/foggy-portrait.jpg);
   background-size: cover;
   background-position: left;
   position: relative;
@@ -426,14 +426,14 @@ header .nav-links.menuAbierto a:nth-child(6) {
 
 @media (min-width: 768px), (orientation: landscape) {
   .contenedor-presentacion {
-    background-image: url(../img/fog1.jpg);
+    background-image: url(../img/foggy-landscape.jpg);
     background-position: top;
   }
 }
 
 @media (orientation: portrait) {
   .contenedor-presentacion {
-    background-image: url(../img/fog2.jpg);
+    background-image: url(../img/foggy-portrait.jpg);
   }
 }
 
@@ -460,6 +460,7 @@ header .nav-links.menuAbierto a:nth-child(6) {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
 }
 
 .contenedor-presentacion .presentacion .cartel {
