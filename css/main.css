@@ -838,7 +838,7 @@ header .nav-links.menuAbierto a:nth-child(6) {
 }
 
 .contenedor-contacto {
-  background-image: url(../img/cafe.JPG);
+  background-image: url(../img/cafe-gafas.jpg);
   background-size: cover;
   background-position: 80%;
   background-attachment: fixed;
@@ -856,7 +856,7 @@ header .nav-links.menuAbierto a:nth-child(6) {
 
 @media (min-width: 1024px), (orientation: landscape) {
   .contenedor-contacto {
-    background-image: url(../img/chica-lentes.JPG);
+    background-image: url(../img/chica-gafas.jpg);
     background-position: right;
   }
 }
@@ -889,6 +889,7 @@ header .nav-links.menuAbierto a:nth-child(6) {
   gap: 5rem;
   height: 100%;
   z-index: 50;
+  width: 100%;
 }
 
 .contenedor-contacto .contacto h3 {
