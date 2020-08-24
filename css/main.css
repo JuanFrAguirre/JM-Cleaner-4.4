@@ -841,7 +841,6 @@ header .nav-links.menuAbierto a:nth-child(6) {
   background-image: url(../img/cafe-gafas.jpg);
   background-size: cover;
   background-position: 80%;
-  background-attachment: fixed;
   height: 80vh;
   width: 100%;
   display: -webkit-box;
@@ -868,7 +867,8 @@ header .nav-links.menuAbierto a:nth-child(6) {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: black;
+  opacity: .5;
 }
 
 .contenedor-contacto .contacto {
