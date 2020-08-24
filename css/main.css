@@ -1928,6 +1928,60 @@ footer .copyright::before {
   text-align: left;
 }
 
+.aviso-contenedor {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) rotateZ(-20deg);
+          transform: translateX(-50%) rotateZ(-20deg);
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.5);
+  width: 200%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+  .aviso-contenedor {
+    top: 40%;
+  }
+}
+
+.aviso-contenedor .aviso-texto {
+  padding: 2rem 0;
+}
+
+.aviso-contenedor .aviso-texto .aviso-titulo {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .aviso-contenedor .aviso-texto .aviso-titulo {
+    font-size: 4rem;
+  }
+}
+
+.aviso-contenedor .aviso-texto .aviso-subtitulo {
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  .aviso-contenedor .aviso-texto .aviso-subtitulo {
+    font-size: 3rem;
+  }
+}
+
 .contenedor-productos {
   padding-top: 10rem;
   min-height: 100vh;
