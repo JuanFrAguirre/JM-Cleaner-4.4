@@ -415,10 +415,9 @@ header .nav-links.menuAbierto a:nth-child(6) {
 }
 
 .contenedor-presentacion {
-  background-image: url(../img/fog2.JPG);
+  background-image: url(../img/fog2.jpg);
   background-size: cover;
   background-position: left;
-  background-attachment: fixed;
   position: relative;
   height: 100vh;
   width: 100%;
@@ -427,14 +426,14 @@ header .nav-links.menuAbierto a:nth-child(6) {
 
 @media (min-width: 768px), (orientation: landscape) {
   .contenedor-presentacion {
-    background-image: url(../img/fog1.JPG);
+    background-image: url(../img/fog1.jpg);
     background-position: top;
   }
 }
 
 @media (orientation: portrait) {
   .contenedor-presentacion {
-    background-image: url(../img/fog2.JPG);
+    background-image: url(../img/fog2.jpg);
   }
 }
 
@@ -629,7 +628,7 @@ header .nav-links.menuAbierto a:nth-child(6) {
     transition: all 0.3s ease-in-out;
   }
   .contenedor-empresa .empresa p em:hover::before {
-    content: "¡El anti-fog es aún más práctico en estos tiempos de pandemia, evita la molestia de desempañarse los lentes todo el tiempo! (al 100% en cristales sin anti reflex)";
+    content: "¡El anti-fog es aún más práctico en estos tiempos de pandemia, evita tener que desempañar los lentes todo el tiempo! (al 100% en cristales sin anti reflex)";
     position: absolute;
     bottom: 20%;
     left: 0;
@@ -1682,7 +1681,7 @@ footer .copyright::before {
   border-bottom: 1rem solid #fff;
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-height: 450px) {
   .tiendas {
     max-height: 100vh;
     height: 100vh;
@@ -1695,17 +1694,56 @@ footer .copyright::before {
   padding: 1rem 1rem;
   text-align: center;
   font-size: 5rem;
-  line-height: 6rem;
+  line-height: 7rem;
   color: #02507a;
 }
 
 .acordeon {
   background-color: #02507a;
   border-top: 0.5rem solid #02507a;
+  min-height: 60vh;
 }
 
-.acordeon .accordion {
-  min-height: 60vh;
+.acordeon #acordeon-escritorio {
+  display: none;
+}
+
+@media (min-width: 768px), (orientation: landscape) {
+  .acordeon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 0;
+  }
+  .acordeon #acordeon-escritorio {
+    display: block;
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+    height: 100%;
+  }
+  .acordeon #acordeon-escritorio .contenido {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .acordeon #acordeon-escritorio .contenido a {
+    padding: 2rem;
+  }
+  .acordeon #accordionExample {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+    height: 100%;
+  }
 }
 
 .acordeon .card {
@@ -1830,22 +1868,27 @@ footer .copyright::before {
   padding: 0;
   margin: 1rem 0;
   width: 100%;
-  font-weight: 400;
   text-align: center;
+  font-weight: 500;
 }
 
 .subtitulo-tienda {
   font-size: 1.8rem;
   line-height: 2rem;
   padding: 0;
-  margin: .75rem 0;
+  margin: 1rem 0;
   width: 100%;
-  font-weight: 300;
   text-align: center;
+  font-weight: 300;
 }
 
 .local .nombre-tienda {
   color: #000;
+  padding: 0;
+  margin: .5 0;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  text-align: left;
 }
 
 .local .ubicacion-tienda {
@@ -2072,7 +2115,54 @@ footer .copyright::before {
   }
 }
 
-.carousel {
+.slider-productos {
+  position: relative;
+}
+
+.slider-productos .slider-frase {
+  color: #fff;
+  font-size: 2rem !important;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0.75rem;
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 80%;
+  z-index: 20;
+}
+
+@media (min-width: 600px) {
+  .slider-productos .slider-frase {
+    bottom: 15%;
+  }
+  .slider-productos .slider-frase p {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .slider-productos .slider-frase {
+    bottom: 10%;
+  }
+  .slider-productos .slider-frase p {
+    font-size: 2.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slider-productos .slider-frase p {
+    font-size: 3.5rem;
+  }
+}
+
+.slider-productos .slider-frase p {
+  text-align: center;
+}
+
+.slider-productos .carousel {
   height: 50rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2086,18 +2176,10 @@ footer .copyright::before {
 }
 
 @media (orientation: landscape) {
-  .carousel {
+  .slider-productos .carousel {
     max-height: 100vh;
     height: Min(80rem, 80vh);
   }
-}
-
-.carousel .carousel-caption {
-  color: #fff;
-  font-size: 2rem !important;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 0.75rem;
 }
 
 html {
