@@ -30,7 +30,17 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
-L.marker([-31.410237, -64.199145]).addTo(map);
+let marcadores = document.querySelectorAll(".link-tienda");
+
+for (let i = 0; i < marcadores.length; i++) {
+  if (marcadores[i].dataset.location) {
+    const Xcoord = parseFloat(marcadores[i].dataset.location.slice(0, 10));
+    const Ycoord = parseFloat(marcadores[i].dataset.location.slice(11, -1));
+    L.marker([Xcoord, Ycoord]).addTo(map);
+  }
+}
+
+// L.marker([-31.410237, -64.199145]).addTo(map);
 // .bindPopup("Aca tenes que elegir donde estan las farmacias, Hugo.")
 // .openPopup();
 

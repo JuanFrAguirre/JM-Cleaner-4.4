@@ -621,7 +621,7 @@ header .nav-links.menuAbierto a:nth-child(6) {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 300px) {
   .contenedor-empresa .empresa p em {
     color: #23B8EC;
     cursor: pointer;
@@ -642,13 +642,13 @@ header .nav-links.menuAbierto a:nth-child(6) {
   }
 }
 
-@media (min-width: 1024px) and (min-width: 1024px) {
+@media (min-width: 300px) and (min-width: 1024px) {
   .contenedor-empresa .empresa p em:hover::before {
     font-size: 2rem;
   }
 }
 
-@media (min-width: 1024px) and (min-width: 1200px) {
+@media (min-width: 300px) and (min-width: 1200px) {
   .contenedor-empresa .empresa p em:hover::before {
     bottom: 25%;
   }
@@ -2099,10 +2099,14 @@ footer .copyright::before {
   }
 }
 
+.contenedor-productos .contenido-productos .producto .texto-producto:nth-of-type(2) p {
+  padding: 1rem 5rem;
+}
+
 .contenedor-productos .contenido-productos .titulo-producto,
 .contenedor-productos .contenido-productos #titulo-producto {
   background-color: #02507a;
-  width: 50%;
+  width: 60%;
   padding: 1rem;
   border-radius: 0.75rem;
   border: 2px solid #fff;
