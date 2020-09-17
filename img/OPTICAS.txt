@@ -1,0 +1,83 @@
+   ( sANTA FE)
+
+
+{
+id: "xxx",
+name: "Optica Focus",
+address: "Calle 9 403",
+phone: "",
+coordenates: "-29.116153, -59.659253",
+loc: "Avellaneda"
+},
+
+
+
+{
+id: "xxx",
+name: "Óptica",
+address: "Av. Cordoba 2020",
+phone: "",
+coordenates: "-31.447787, -60.935181",
+loc: "Esperanza"
+},
+
+
+
+{
+id: "xxx",
+name: "Óptica Centro",
+address: "Habegger 856",
+phone: "",
+coordenates: "-29.146208, -59.647080",
+loc: "Reconquista"
+},
+
+
+
+{
+id: "xxx",
+name: "Óptica",
+address: "General Lopez 898",
+phone: "",
+coordenates: "-29.148353, -59.647856",
+loc: "Reconquista"
+},
+
+
+
+{
+id: "xxx",
+name: "Óptica Moon",
+address: "Urquiza 190",
+phone: "",
+coordenates: "-30.362947, -61.919141",
+loc: "San Guillermo"
+},
+
+
+
+{
+id: "xxx",
+name: "Óptica",
+address: "9 de Julio 390",
+phone: "",
+coordenates: "-30.536488, -61.962272",
+loc: "Suardi"
+},
+
+
+
+--------------------------
+
+  (sANTIAGO DEL ESTERO)
+
+
+
+{
+id: "xxx",
+name: "Óptica Bella Vista",
+address: "Tucumán 227",
+phone: "",
+coordenates: "-27.784365, -64.261652",
+loc: "Santiago del Estero"
+},
