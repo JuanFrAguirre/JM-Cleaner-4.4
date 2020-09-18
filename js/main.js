@@ -1086,3 +1086,208 @@ goUpBtn.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+// -----------------------------------------
+
+// stores tab functionality
+
+const grid = document.querySelector(".locales-grilla");
+
+// function that iterates though a stores array and for each of them adds its content to the grid
+function insertTemplate(arrayDeObjetos) {
+  arrayDeObjetos.forEach((local) => {
+    const templateName = document.createElement("h6");
+    const templateAddress = document.createElement("h6");
+    const templatePhone = document.createElement("h6");
+    const templateLoc = document.createElement("h6");
+    const templateItem = document.createElement("div");
+
+    templateName.classList.add("template-name");
+    templateAddress.classList.add("template-address");
+    templatePhone.classList.add("template-phone");
+    templateLoc.classList.add("template-loc");
+    templateItem.classList.add("template-item");
+
+    let nameText = document.createTextNode(local.name);
+    let addressText = document.createTextNode(local.address);
+    let phoneText = document.createTextNode(local.phone);
+    let locText = document.createTextNode(local.loc);
+
+    templateName.appendChild(nameText);
+    templateAddress.appendChild(addressText);
+    templatePhone.appendChild(phoneText);
+    templateLoc.appendChild(locText);
+
+    templateItem.appendChild(templateName);
+    templateItem.appendChild(templateAddress);
+    templateItem.appendChild(templateLoc);
+    if (local.phone) templateItem.appendChild(templatePhone);
+
+    grid.appendChild(templateItem);
+  });
+}
+
+// selectors and menus
+
+const farmaciasTitle = document.querySelectorAll(".locales-titulos_item")[0];
+const opticasTitle = document.querySelectorAll(".locales-titulos_item")[1];
+
+const farmaciasSubtitle = document.querySelectorAll(".local-seccion")[0];
+const opticasSubtitle = document.querySelectorAll(".local-seccion")[1];
+
+function removeClass(element, classToRemove) {
+  element.classList.remove(classToRemove);
+}
+function addClass(element, classToAdd) {
+  element.classList.add(classToAdd);
+}
+
+farmaciasTitle.addEventListener("click", () => {
+  if (!farmaciasTitle.classList.contains("selected-item")) {
+    addClass(farmaciasTitle, "selected-item");
+    removeClass(opticasTitle, "selected-item");
+    removeClass(farmaciasSubtitle, "ocultar");
+    addClass(opticasSubtitle, "ocultar");
+  }
+  subtitulosFarmacias.forEach((item) => {
+    removeClass(item, "selected-item");
+  });
+  addClass(itemsFLider, "selected-item");
+  grid.innerHTML = "";
+  insertTemplate(F_LIDER);
+});
+
+opticasTitle.addEventListener("click", () => {
+  if (!opticasTitle.classList.contains("selected-item")) {
+    addClass(opticasTitle, "selected-item");
+    removeClass(farmaciasTitle, "selected-item");
+    addClass(farmaciasSubtitle, "ocultar");
+    removeClass(opticasSubtitle, "ocultar");
+  }
+  subtitulosOpticas.forEach((item) => {
+    removeClass(item, "selected-item");
+  });
+  addClass(itemsOCCap, "selected-item");
+  grid.innerHTML = "";
+  insertTemplate(O_CBA_CAPITAL);
+});
+
+// inserting templates with stores in the stores tab
+
+const itemsFLider = document.querySelectorAll(".local-seccion_cadenas h5")[0];
+const itemsFGralPaz = document.querySelectorAll(".local-seccion_cadenas h5")[1];
+const itemsFSanchezA = document.querySelectorAll(
+  ".local-seccion_cadenas h5"
+)[2];
+const itemsFRGralPaz = document.querySelectorAll(
+  ".local-seccion_cadenas h5"
+)[3];
+const itemsFIndep = document.querySelectorAll(".local-seccion_cadenas h5")[4];
+const itemsOCCap = document.querySelectorAll(".local-seccion_cadenas h5")[5];
+const itemsOCInt = document.querySelectorAll(".local-seccion_cadenas h5")[6];
+const itemsOCata = document.querySelectorAll(".local-seccion_cadenas h5")[7];
+const itemsOEnRi = document.querySelectorAll(".local-seccion_cadenas h5")[8];
+const itemsOSaFe = document.querySelectorAll(".local-seccion_cadenas h5")[9];
+const itemsOSgo = document.querySelectorAll(".local-seccion_cadenas h5")[10];
+
+const subtitulosFarmacias = [];
+subtitulosFarmacias.push(
+  itemsFLider,
+  itemsFGralPaz,
+  itemsFSanchezA,
+  itemsFRGralPaz,
+  itemsFIndep
+);
+
+const subtitulosOpticas = [];
+subtitulosOpticas.push(
+  itemsOCCap,
+  itemsOCInt,
+  itemsOCata,
+  itemsOEnRi,
+  itemsOEnRi,
+  itemsOSaFe,
+  itemsOSgo
+);
+
+function resaltarTitulo(array) {
+  array.forEach((item) => {
+    item.addEventListener("click", () => {
+      array.forEach((item) => {
+        removeClass(item, "selected-item");
+      });
+      addClass(item, "selected-item");
+    });
+  });
+}
+
+resaltarTitulo(subtitulosFarmacias);
+resaltarTitulo(subtitulosOpticas);
+
+// inserting items in grid
+
+// function insertItemsGrid(array) {
+//   array.forEach((item) => {
+//     item.addEventListener("click", () => {
+//       insertTemplate(item.dataset.target);
+//     });
+//   });
+// }
+
+// insertItemsGrid(subtitulosFarmacias);
+// insertItemsGrid(subtitulosOpticas);
+
+insertTemplate(F_LIDER);
+
+//farmacias
+itemsFLider.addEventListener("click", () => {
+  grid.innerHTML = "";
+  insertTemplate(F_LIDER);
+});
+
+itemsFGralPaz.addEventListener("click", () => {
+  grid.innerHTML = "";
+  insertTemplate(F_GENERAL_PAZ);
+});
+itemsFSanchezA.addEventListener("click", () => {
+  grid.innerHTML = "";
+  insertTemplate(F_SANCHEZ_ANTONIOLI);
+});
+itemsFRGralPaz.addEventListener("click", () => {
+  grid.innerHTML = "";
+  insertTemplate(F_RED_GENERAL_PAZ);
+});
+itemsFIndep.addEventListener("click", () => {
+  grid.innerHTML = "";
+  insertTemplate(F_GENERICAS);
+});
+
+//opticas
+itemsOCCap.addEventListener("click", () => {
+  grid.innerHTML = "";
+  insertTemplate(O_CBA_CAPITAL);
+});
+itemsOCInt.addEventListener("click", () => {
+  grid.innerHTML = "";
+  insertTemplate(O_CBA_INTERIOR);
+});
+itemsOCata.addEventListener("click", () => {
+  grid.innerHTML = "";
+  insertTemplate(O_CATAMARCA);
+});
+itemsOEnRi.addEventListener("click", () => {
+  grid.innerHTML = "";
+  insertTemplate(O_ENTRE_RIOS);
+});
+itemsOSaFe.addEventListener("click", () => {
+  grid.innerHTML = "";
+  insertTemplate(O_SANTA_FE);
+});
+itemsOSgo.addEventListener("click", () => {
+  grid.innerHTML = "";
+  insertTemplate(O_SGO_DEL_ESTERO);
+});
+
+document.querySelector(".template-item").addEventListener("click", () => {
+  document.querySelector("#id-mapa").scrollIntoView();
+});
