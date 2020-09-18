@@ -1772,8 +1772,8 @@ footer .copyright::before {
   padding: 2rem 1rem;
   border-radius: .75rem;
   background-color: #eee;
-  -webkit-box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.15);
-          box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 1.5rem 1.5rem 1.5rem rgba(0, 0, 0, 0.15);
+          box-shadow: 1.5rem 1.5rem 1.5rem rgba(0, 0, 0, 0.15);
 }
 
 @media (min-width: 768px) {
@@ -1918,8 +1918,8 @@ footer .copyright::before {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  -webkit-box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.15);
-          box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 1.5rem 1.5rem 1.5rem rgba(0, 0, 0, 0.15);
+          box-shadow: 1.5rem 1.5rem 1.5rem rgba(0, 0, 0, 0.15);
 }
 
 @media (min-width: 768px) {
